@@ -284,12 +284,10 @@
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
         }
 
-        body[dir="rtl"] #nameInputAr,
-        body[dir="ltr"] #nameInputEn {
+        body[dir="rtl"] #nameInputAr {
             text-align: right;
         }
 
-        body[dir="rtl"] #nameInputEn,
         body[dir="ltr"] #nameInputAr {
             text-align: left;
         }
@@ -737,13 +735,8 @@
         <!-- مرحلة إدخال الاسم -->
         <div class="input-group" id="nameInputGroup">
             <div class="input-container ar-label">
-                <label for="nameInputAr" id="arabicNameLabel">الاسم باللغة العربية</label>
+                <label for="nameInputAr" id="arabicNameLabel">الاسم</label>
                 <input id="nameInputAr" placeholder="اكتب اسمك هنا..." type="text" />
-            </div>
-
-            <div class="input-container">
-                <label for="nameInputEn" id="englishNameLabel">الاسم باللغة الإنجليزية</label>
-                <input id="nameInputEn" placeholder="Enter your name here..." type="text" />
             </div>
         </div>
 
@@ -815,7 +808,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             // العناصر الرئيسية
             const nameInputAr = document.getElementById('nameInputAr');
-            const nameInputEn = document.getElementById('nameInputEn');
             const nameInputGroup = document.getElementById('nameInputGroup');
             const designSelection = document.getElementById('designSelection');
             const nextButton = document.getElementById('nextButton');
@@ -858,10 +850,8 @@
             const arabicTexts = {
                 heading: "رمضان كريم",
                 headingIcon: "🏮",
-                arabicLabel: "الاسم باللغة العربية",
+                arabicLabel: "الاسم",
                 arabicPlaceholder: "اكتب اسمك هنا...",
-                englishLabel: "الاسم باللغة الإنجليزية",
-                englishPlaceholder: "Enter your name here...",
                 designTitle: "اختر تصميم التهنئة",
                 nextButton: "إنشاء التهنئة",
                 backButton: "رجوع",
@@ -879,10 +869,8 @@
             const englishTexts = {
                 heading: "Ramadan Kareem",
                 headingIcon: "🏮",
-                arabicLabel: "Name in Arabic",
-                arabicPlaceholder: "Write your name in Arabic...",
-                englishLabel: "Name in English",
-                englishPlaceholder: "Write your name here...",
+                arabicLabel: "Name",
+                arabicPlaceholder: "Write your name here...",
                 designTitle: "Choose Greeting Design",
                 nextButton: "Generate Greeting",
                 backButton: "Back",
@@ -940,14 +928,12 @@
                     languageSwitcher.innerHTML = `<i class="fas fa-language"></i><span>${arabicTexts.switchToArabic}</span>`;
                     updateTexts(englishTexts);
                     nameInputAr.style.textAlign = 'right';
-                    nameInputEn.style.textAlign = 'left';
                 } else {
                     htmlElement.setAttribute('dir', 'rtl');
                     htmlElement.setAttribute('lang', 'ar');
                     languageSwitcher.innerHTML = `<i class="fas fa-language"></i><span>${englishTexts.switchToEnglish}</span>`;
                     updateTexts(arabicTexts);
                     nameInputAr.style.textAlign = 'right';
-                    nameInputEn.style.textAlign = 'left';
                 }
             }
 
@@ -956,8 +942,6 @@
                 document.getElementById('mainHeading').innerHTML = `<span class="heading-icon">${texts.headingIcon}</span> ${texts.heading} <span class="heading-icon">${texts.headingIcon}</span>`;
                 document.getElementById('arabicNameLabel').textContent = texts.arabicLabel;
                 document.getElementById('nameInputAr').placeholder = texts.arabicPlaceholder;
-                document.getElementById('englishNameLabel').textContent = texts.englishLabel;
-                document.getElementById('nameInputEn').placeholder = texts.englishPlaceholder;
                 document.getElementById('designTitle').textContent = texts.designTitle;
                 document.getElementById('nextButtonText').textContent = texts.nextButton;
                 document.getElementById('backButtonText').textContent = texts.backButton;
@@ -972,12 +956,11 @@
             // دالة للانتقال مباشرة لإنشاء التهنئة
             function goToDesignSelection() {
                 const nameAr = nameInputAr.value.trim();
-                const nameEn = nameInputEn.value.trim();
 
-                if (!nameAr && !nameEn) {
+                if (!nameAr) {
                     showError(htmlElement.getAttribute('dir') === 'rtl' ?
-                        'الرجاء إدخال الاسم على الأقل في أحد الحقلين' :
-                        'Please enter your name in at least one field');
+                        'الرجاء إدخال الاسم' :
+                        'Please enter your name');
                     nameInputAr.focus();
                     return;
                 }
@@ -1008,7 +991,6 @@
             // دالة إعادة البدء لتهنئة جديدة
             function startNewCard() {
                 nameInputAr.value = '';
-                nameInputEn.value = '';
                 resultContainer.style.display = 'none';
                 canvas.style.display = 'none';
                 downloadShareContainer.style.display = 'none';
@@ -1039,7 +1021,6 @@
                 }
 
                 const nameAr = nameInputAr.value.trim();
-                const nameEn = nameInputEn.value.trim();
 
                 loadingText.style.display = "flex";
                 resultContainer.style.display = "none";
@@ -1068,25 +1049,14 @@
                     if (nameAr) {
                         const arSize = Math.round(canvas.width * positions.ar.size);
                         const arY = Math.round(canvas.height * positions.ar.y);
-                        ctx.font = `bold ${arSize}px ${fontStyle}`;
+                        ctx.font = `500 ${arSize}px ${fontStyle}`;
                         ctx.fillStyle = "#ffffff";
                         ctx.textAlign = "center";
                         ctx.textBaseline = "middle";
                         ctx.fillText(nameAr, canvas.width / 2, arY);
                     }
 
-                    // كتابة الاسم الإنجليزي
-                    if (nameEn) {
-                        const enSize = Math.round(canvas.width * positions.en.size);
-                        const enY = Math.round(canvas.height * positions.en.y);
-                        ctx.font = `${enSize}px ${fontStyle}`;
-                        ctx.fillStyle = "#ffffff";
-                        ctx.textAlign = "center";
-                        ctx.textBaseline = "middle";
-                        ctx.fillText(nameEn, canvas.width / 2, enY);
-                    }
-
-                    setupShareLinks(nameAr || nameEn);
+                    setupShareLinks(nameAr);
 
                     canvas.style.display = "block";
                     downloadButton.href = canvas.toDataURL('image/png');
@@ -1168,7 +1138,7 @@
             });
 
             // تفعيل الزر عند الضغط على Enter
-            [nameInputAr, nameInputEn].forEach(input => {
+            [nameInputAr].forEach(input => {
                 input.addEventListener('keypress', function(e) {
                     if (e.key === 'Enter') {
                         goToDesignSelection();
@@ -1178,7 +1148,6 @@
 
             // ضبط اتجاه النص الأولي للحقول
             nameInputAr.style.textAlign = 'right';
-            nameInputEn.style.textAlign = 'left';
 
             // تحميل الخط مسبقاً
             loadFont().catch(e => console.log('تحميل الخط المسبق:', e.message));
