@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تهنئة رمضان | ويفز</title>
+    <link href="logo.gif" rel="icon" sizes="32x32" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1b2a4a;
+            --primary-light: #2c4470;
+            --secondary-color: #1b2a4a;
+            --accent-color: #c8102e;
+            --accent-dark: #a00d24;
+            --text-color: #1b2a4a;
+            --light-color: #fff;
+            --light-gray: #f8f9fa;
+            --shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+            --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+            --twitter-color: #1DA1F2;
+            --whatsapp-color: #25D366;
+            --facebook-color: #1877F2;
+            --telegram-color: #0088cc;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @font-face {
+            font-family: 'GE SS Two';
+            src: url('font/ArbFONTS-GE_SS_Two_Light.otf') format('opentype');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SS Two';
+            src: url('font/ArbFONTS-GE_SS_Two_Medium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        @font-face {
+            font-family: 'GE SS Two';
+            src: url('font/ArbFONTS-GE_SS_Two_Bold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        body {
+            font-family: 'GE SS Two', Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #0d1a2e 0%, #1b2a4a 40%, #2c4470 100%);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-attachment: fixed;
+            line-height: 1.6;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* نجوم متحركة في الخلفية */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.4), transparent),
+                radial-gradient(2px 2px at 40px 70px, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 90px 40px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(2px 2px at 160px 120px, rgba(255,255,255,0.3), transparent),
+                radial-gradient(1px 1px at 200px 60px, rgba(255,255,255,0.4), transparent),
+                radial-gradient(2px 2px at 300px 80px, rgba(255,255,255,0.2), transparent),
+                radial-gradient(1px 1px at 400px 30px, rgba(255,255,255,0.5), transparent),
+                radial-gradient(2px 2px at 500px 100px, rgba(255,255,255,0.3), transparent);
+            background-size: 550px 150px;
+            animation: twinkle 4s ease-in-out infinite alternate;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes twinkle {
+            0% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+
+        /* هلال رمضان المتوهج */
+        body::after {
+            position: fixed;
+            top: 30px;
+            right: 50%;
+            transform: translateX(50%);
+            font-size: 3rem;
+            color: var(--accent-color);
+            text-shadow: 0 0 20px rgba(200, 16, 46, 0.6), 0 0 40px rgba(200, 16, 46, 0.3);
+            animation: glowPulse 3s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes glowPulse {
+            0%, 100% { text-shadow: 0 0 20px rgba(200, 16, 46, 0.6), 0 0 40px rgba(200, 16, 46, 0.3); }
+            50% { text-shadow: 0 0 30px rgba(200, 16, 46, 0.8), 0 0 60px rgba(200, 16, 46, 0.5); }
+        }
+
+        .container {
+            background: var(--light-color);
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: var(--shadow);
+            max-width: 580px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            transition: var(--transition);
+            z-index: 1;
+            border: 1px solid rgba(200, 16, 46, 0.15);
+        }
+
+        /* زخرفة ذهبية علوية */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+        }
+
+        .container:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+        }
+
+        .header-container {
+            position: relative;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .language-switcher {
+            position: fixed;
+            top: 1rem;
+            left: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            backdrop-filter: blur(10px);
+        }
+
+        body[dir="ltr"] .language-switcher {
+            left: auto;
+            right: 10px;
+        }
+
+        .language-switcher:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-switcher i {
+            font-size: 1rem;
+        }
+
+        .logo {
+            max-width: 220px;
+            height: auto;
+            margin: 1rem auto 0;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            margin-bottom: 1.8rem;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 0.8rem;
+            font-weight: 700;
+        }
+
+        h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 50%;
+            transform: translateX(50%);
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+            border-radius: 4px;
+        }
+
+        /* فانوس مزخرف بجانب العنوان */
+        .heading-icon {
+            display: inline-block;
+            font-size: 1.4rem;
+            margin: 0 0.3rem;
+            animation: swing 3s ease-in-out infinite;
+        }
+
+        @keyframes swing {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+        }
+
+        body[dir="rtl"] .input-group {
+            text-align: right;
+        }
+
+        body[dir="ltr"] .input-group {
+            text-align: left;
+        }
+
+        .input-container {
+            position: relative;
+            margin-bottom: 1.2rem;
+        }
+
+        .input-container label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            font-size: 1rem;
+        }
+
+        body[dir="rtl"] .input-container label {
+            text-align: right;
+            padding-right: 0.5rem;
+            padding-left: 0;
+        }
+
+        body[dir="ltr"] .input-container label {
+            text-align: left;
+            padding-left: 0.5rem;
+            padding-right: 0;
+        }
+
+        input {
+            padding: 0.9rem 1.2rem;
+            font-size: 1rem;
+            width: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-family: 'GE SS Two', Arial, sans-serif;
+            background-color: var(--light-gray);
+            transition: var(--transition);
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        body[dir="rtl"] #nameInputAr,
+        body[dir="ltr"] #nameInputEn {
+            text-align: right;
+        }
+
+        body[dir="rtl"] #nameInputEn,
+        body[dir="ltr"] #nameInputAr {
+            text-align: left;
+        }
+
+        input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+            background-color: var(--light-color);
+            box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
+        }
+
+        input::placeholder {
+            color: #aaa;
+            opacity: 1;
+        }
+
+        /* تصميمات اختيار التصميم */
+        .design-selection {
+            display: none;
+            margin: 2rem 0;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .design-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .design-options {
+            display: flex;
+            justify-content: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .design-option {
+            height: 180px;
+            border-radius: 14px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            border: 3px solid transparent;
+        }
+
+        .design-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+
+        .design-option.selected {
+            border-color: var(--accent-color);
+            box-shadow: 0 4px 20px rgba(200, 16, 46, 0.3);
+        }
+
+        .design-option img {
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .design-option .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .design-option:hover .overlay {
+            opacity: 1;
+        }
+
+        .design-option.selected .overlay {
+            background: rgba(26, 82, 118, 0.55);
+            opacity: 1;
+        }
+
+        .design-option.selected .overlay::after {
+            content: '✓';
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--accent-color);
+            color: white;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+        }
+
+        .button-container {
+            margin-top: 1.5rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        button {
+            padding: 0.9rem 2rem;
+            font-size: 1.05rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'GE SS Two', Arial, sans-serif;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+        }
+
+        button.secondary {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            box-shadow: 0 4px 12px rgba(26, 82, 118, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(200, 16, 46, 0.4);
+        }
+
+        button.secondary:hover {
+            box-shadow: 0 6px 18px rgba(26, 82, 118, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .loading {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            margin: 1.5rem 0;
+            color: var(--primary-color);
+            font-size: 1.05rem;
+        }
+
+        .spinner {
+            width: 22px;
+            height: 22px;
+            border: 3px solid rgba(26, 82, 118, 0.2);
+            border-radius: 50%;
+            border-top-color: var(--accent-color);
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .result-container {
+            display: none;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .success-message {
+            background-color: rgba(39, 174, 96, 0.08);
+            color: #27ae60;
+            padding: 0.9rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.7rem;
+            border: 1px solid rgba(39, 174, 96, 0.15);
+        }
+
+        canvas {
+            margin: 1.5rem auto;
+            border-radius: 16px;
+            max-width: 100%;
+            display: none;
+            border: 1px solid #eee;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        canvas:hover {
+            transform: scale(1.01);
+        }
+
+        .download-share-container {
+            display: none;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        #downloadButton {
+            padding: 0.9rem 1.8rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'GE SS Two', Arial, sans-serif;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(26, 82, 118, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+        }
+
+        #downloadButton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(26, 82, 118, 0.4);
+        }
+
+        #newCardButton {
+            padding: 0.9rem 1.8rem;
+            background: linear-gradient(135deg, var(--accent-color), var(--accent-dark));
+            color: white;
+            border-radius: 12px;
+            text-decoration: none;
+            font-family: 'GE SS Two', Arial, sans-serif;
+            transition: var(--transition);
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+        }
+
+        #newCardButton:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(200, 16, 46, 0.4);
+        }
+
+        .share-section {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .share-title {
+            font-size: 0.95rem;
+            color: #777;
+            margin-bottom: 0.3rem;
+        }
+
+        .social-share {
+            display: flex;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+            transition: var(--transition);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+
+        .social-btn:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+        }
+
+        .twitter { background-color: var(--twitter-color); }
+        .whatsapp { background-color: var(--whatsapp-color); }
+        .facebook { background-color: var(--facebook-color); }
+        .telegram { background-color: var(--telegram-color); }
+
+        body[dir="ltr"] {
+            text-align: left;
+        }
+
+        /* رسالة الخطأ */
+        .error-toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #e74c3c;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-family: 'GE SS Two', Arial, sans-serif;
+        }
+
+        .error-toast.show {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* مؤشر الخطوات */
+        .steps-indicator {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .step-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ddd;
+            transition: var(--transition);
+        }
+
+        .step-dot.active {
+            background: var(--accent-color);
+            width: 28px;
+            border-radius: 5px;
+        }
+
+        .step-line {
+            width: 30px;
+            height: 2px;
+            background: #ddd;
+            transition: var(--transition);
+        }
+
+        .step-line.active {
+            background: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+                border-radius: 20px;
+            }
+
+            h2 {
+                font-size: 1.4rem;
+            }
+
+            button, #downloadButton, #newCardButton {
+                padding: 0.8rem 1.3rem;
+                font-size: 0.95rem;
+                min-width: 150px;
+            }
+
+            .logo {
+                max-width: 180px;
+            }
+
+            .social-btn {
+                width: 42px;
+                height: 42px;
+                font-size: 1.2rem;
+            }
+
+            .language-switcher {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.8rem;
+            }
+
+            .design-options {
+                align-items: center;
+            }
+
+            .design-option {
+                max-width: 280px;
+                height: 160px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            body::after {
+                font-size: 2rem;
+                top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <button class="language-switcher" id="languageSwitcher">
+                <i class="fas fa-language"></i>
+                <span>English</span>
+            </button>
+            <img alt="شعار ويفز" class="logo" src="logo.gif" />
+        </div>
+
+        <!-- مؤشر الخطوات -->
+        <div class="steps-indicator" id="stepsIndicator">
+            <div class="step-dot active" id="step1Dot"></div>
+            <div class="step-line" id="stepLine"></div>
+            <div class="step-dot" id="step2Dot"></div>
+        </div>
+
+        <h2 id="mainHeading"><span class="heading-icon">🏮</span> رمضان كريم <span class="heading-icon">🏮</span></h2>
+
+        <!-- مرحلة إدخال الاسم -->
+        <div class="input-group" id="nameInputGroup">
+            <div class="input-container ar-label">
+                <label for="nameInputAr" id="arabicNameLabel">الاسم باللغة العربية</label>
+                <input id="nameInputAr" placeholder="اكتب اسمك هنا..." type="text" />
+            </div>
+
+            <div class="input-container">
+                <label for="nameInputEn" id="englishNameLabel">الاسم باللغة الإنجليزية</label>
+                <input id="nameInputEn" placeholder="Enter your name here..." type="text" />
+            </div>
+        </div>
+
+        <!-- مرحلة اختيار التصميم -->
+        <div class="design-selection" id="designSelection">
+            <div class="design-title" id="designTitle">اختر تصميم التهنئة</div>
+            <div class="design-options">
+                <div class="design-option selected" data-design="story">
+                    <img src="designs/رمضان كريم ويفز ستوري copy.png" alt="تصميم ستوري">
+                    <div class="overlay">تصميم ستوري</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-container">
+            <button id="nextButton">
+                <i class="fas fa-magic"></i>
+                <span id="nextButtonText">إنشاء التهنئة</span>
+            </button>
+            <button id="generateButton" style="display: none;">
+                <i class="fas fa-magic"></i>
+                <span id="generateButtonText">إنشاء التهنئة</span>
+            </button>
+            <button id="backButton" class="secondary" style="display: none;">
+                <i class="fas fa-arrow-right"></i>
+                <span id="backButtonText">رجوع</span>
+            </button>
+        </div>
+
+        <div class="loading" id="loadingText">
+            <div class="spinner"></div>
+            <span id="loadingTextSpan">جاري إنشاء التهنئة، الرجاء الانتظار...</span>
+        </div>
+
+        <div class="result-container" id="resultContainer">
+            <div class="success-message">
+                <i class="fas fa-check-circle"></i>
+                <span id="successMessage">تم إنشاء تهنئتك بنجاح!</span>
+            </div>
+
+            <canvas id="greetingCanvas"></canvas>
+
+            <div class="download-share-container" id="downloadShareContainer">
+                <div class="action-buttons">
+                    <a download="تهنئة-رمضان-ويفز.png" href="#" id="downloadButton">
+                        <i class="fas fa-download"></i>
+                        <span id="downloadButtonText">تحميل التهنئة</span>
+                    </a>
+                    <button id="newCardButton">
+                        <i class="fas fa-redo"></i>
+                        <span id="newCardButtonText">تهنئة جديدة</span>
+                    </button>
+                </div>
+
+                <div class="share-section">
+                    <div class="share-title" id="shareTitle">مشاركة التهنئة:</div>
+                    <div class="social-share">
+                        <a href="#" class="social-btn twitter" id="twitterShare"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn whatsapp" id="whatsappShare"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="social-btn facebook" id="facebookShare"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn telegram" id="telegramShare"><i class="fab fa-telegram-plane"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // العناصر الرئيسية
+            const nameInputAr = document.getElementById('nameInputAr');
+            const nameInputEn = document.getElementById('nameInputEn');
+            const nameInputGroup = document.getElementById('nameInputGroup');
+            const designSelection = document.getElementById('designSelection');
+            const nextButton = document.getElementById('nextButton');
+            const backButton = document.getElementById('backButton');
+            const generateButton = document.getElementById('generateButton');
+            const loadingText = document.getElementById('loadingText');
+            const resultContainer = document.getElementById('resultContainer');
+            const canvas = document.getElementById('greetingCanvas');
+            const downloadShareContainer = document.getElementById('downloadShareContainer');
+            const downloadButton = document.getElementById('downloadButton');
+            const newCardButton = document.getElementById('newCardButton');
+            const ctx = canvas.getContext('2d');
+            const designOptions = document.querySelectorAll('.design-option');
+
+            // عناصر مؤشر الخطوات
+            const step1Dot = document.getElementById('step1Dot');
+            const step2Dot = document.getElementById('step2Dot');
+            const stepLine = document.getElementById('stepLine');
+
+            // عناصر المشاركة الاجتماعية
+            const twitterShare = document.getElementById('twitterShare');
+            const whatsappShare = document.getElementById('whatsappShare');
+            const facebookShare = document.getElementById('facebookShare');
+            const telegramShare = document.getElementById('telegramShare');
+
+            // عناصر تبديل اللغة
+            const languageSwitcher = document.getElementById('languageSwitcher');
+            const htmlElement = document.documentElement;
+
+            // متغيرات التطبيق
+            let selectedDesign = 'story';
+            const designImages = {
+                'story': 'designs/رمضان كريم ويفز ستوري copy.png'
+            };
+            const namePositions = {
+                'story': { ar: { y: 0.42, size: 0.045 }, en: { y: 0.46, size: 0.035 } }
+            };
+
+            // نصوص للغة العربية
+            const arabicTexts = {
+                heading: "رمضان كريم",
+                headingIcon: "🏮",
+                arabicLabel: "الاسم باللغة العربية",
+                arabicPlaceholder: "اكتب اسمك هنا...",
+                englishLabel: "الاسم باللغة الإنجليزية",
+                englishPlaceholder: "Enter your name here...",
+                designTitle: "اختر تصميم التهنئة",
+                nextButton: "إنشاء التهنئة",
+                backButton: "رجوع",
+                generateButton: "إنشاء التهنئة",
+                loadingText: "جاري إنشاء التهنئة، الرجاء الانتظار...",
+                successMessage: "تم إنشاء تهنئتك بنجاح!",
+                downloadButton: "تحميل التهنئة",
+                newCardButton: "تهنئة جديدة",
+                shareTitle: "مشاركة التهنئة:",
+                switchToEnglish: "English",
+                switchToArabic: "العربية"
+            };
+
+            // نصوص للغة الإنجليزية
+            const englishTexts = {
+                heading: "Ramadan Kareem",
+                headingIcon: "🏮",
+                arabicLabel: "Name in Arabic",
+                arabicPlaceholder: "Write your name in Arabic...",
+                englishLabel: "Name in English",
+                englishPlaceholder: "Write your name here...",
+                designTitle: "Choose Greeting Design",
+                nextButton: "Generate Greeting",
+                backButton: "Back",
+                generateButton: "Generate Greeting",
+                loadingText: "Generating your greeting, please wait...",
+                successMessage: "Your greeting has been created successfully!",
+                downloadButton: "Download Greeting",
+                newCardButton: "New Card",
+                shareTitle: "Share Greeting:",
+                switchToEnglish: "English",
+                switchToArabic: "العربية"
+            };
+
+            // دالة لتحميل الخط
+            async function loadFont() {
+                try {
+                    if (document.fonts.check('16px "GE SS Two"')) {
+                        return true;
+                    }
+
+                    const fontBold = new FontFace('GE SS Two', 'url(font/ArbFONTS-GE_SS_Two_Bold.otf)', { weight: '700' });
+                    const fontMedium = new FontFace('GE SS Two', 'url(font/ArbFONTS-GE_SS_Two_Medium.otf)', { weight: '500' });
+                    const fontLight = new FontFace('GE SS Two', 'url(font/GE_SS_Two_Light.otf)', { weight: '300' });
+                    await Promise.all([fontBold.load(), fontMedium.load(), fontLight.load()]);
+                    document.fonts.add(fontBold);
+                    document.fonts.add(fontMedium);
+                    document.fonts.add(fontLight);
+                    return true;
+                } catch (error) {
+                    console.error('خطأ في تحميل الخط:', error);
+                    return false;
+                }
+            }
+
+            // دالة تحديث مؤشر الخطوات
+            function updateSteps(step) {
+                if (step === 1) {
+                    step1Dot.classList.add('active');
+                    step2Dot.classList.remove('active');
+                    stepLine.classList.remove('active');
+                } else {
+                    step1Dot.classList.remove('active');
+                    step2Dot.classList.add('active');
+                    stepLine.classList.add('active');
+                }
+            }
+
+            // دالة تبديل اللغة
+            function toggleLanguage() {
+                const isArabic = htmlElement.getAttribute('dir') === 'rtl';
+
+                if (isArabic) {
+                    htmlElement.setAttribute('dir', 'ltr');
+                    htmlElement.setAttribute('lang', 'en');
+                    languageSwitcher.innerHTML = `<i class="fas fa-language"></i><span>${arabicTexts.switchToArabic}</span>`;
+                    updateTexts(englishTexts);
+                    nameInputAr.style.textAlign = 'right';
+                    nameInputEn.style.textAlign = 'left';
+                } else {
+                    htmlElement.setAttribute('dir', 'rtl');
+                    htmlElement.setAttribute('lang', 'ar');
+                    languageSwitcher.innerHTML = `<i class="fas fa-language"></i><span>${englishTexts.switchToEnglish}</span>`;
+                    updateTexts(arabicTexts);
+                    nameInputAr.style.textAlign = 'right';
+                    nameInputEn.style.textAlign = 'left';
+                }
+            }
+
+            // دالة لتحديث النصوص حسب اللغة
+            function updateTexts(texts) {
+                document.getElementById('mainHeading').innerHTML = `<span class="heading-icon">${texts.headingIcon}</span> ${texts.heading} <span class="heading-icon">${texts.headingIcon}</span>`;
+                document.getElementById('arabicNameLabel').textContent = texts.arabicLabel;
+                document.getElementById('nameInputAr').placeholder = texts.arabicPlaceholder;
+                document.getElementById('englishNameLabel').textContent = texts.englishLabel;
+                document.getElementById('nameInputEn').placeholder = texts.englishPlaceholder;
+                document.getElementById('designTitle').textContent = texts.designTitle;
+                document.getElementById('nextButtonText').textContent = texts.nextButton;
+                document.getElementById('backButtonText').textContent = texts.backButton;
+                document.getElementById('generateButtonText').textContent = texts.generateButton;
+                document.getElementById('loadingTextSpan').textContent = texts.loadingText;
+                document.getElementById('successMessage').textContent = texts.successMessage;
+                document.getElementById('downloadButtonText').textContent = texts.downloadButton;
+                document.getElementById('newCardButtonText').textContent = texts.newCardButton;
+                document.getElementById('shareTitle').textContent = texts.shareTitle;
+            }
+
+            // دالة للانتقال مباشرة لإنشاء التهنئة
+            function goToDesignSelection() {
+                const nameAr = nameInputAr.value.trim();
+                const nameEn = nameInputEn.value.trim();
+
+                if (!nameAr && !nameEn) {
+                    showError(htmlElement.getAttribute('dir') === 'rtl' ?
+                        'الرجاء إدخال الاسم على الأقل في أحد الحقلين' :
+                        'Please enter your name in at least one field');
+                    nameInputAr.focus();
+                    return;
+                }
+
+                nameInputGroup.style.display = 'none';
+                nextButton.style.display = 'none';
+                document.getElementById('stepsIndicator').style.display = 'none';
+                generateCard();
+            }
+
+            // دالة للرجوع إلى مرحلة إدخال الاسم
+            function goBackToNameInput() {
+                nameInputGroup.style.display = 'block';
+                designSelection.style.display = 'none';
+                nextButton.style.display = 'inline-flex';
+                generateButton.style.display = 'none';
+                backButton.style.display = 'none';
+                updateSteps(1);
+
+                designOptions.forEach(option => option.classList.remove('selected'));
+                selectedDesign = null;
+
+                setTimeout(() => {
+                    nameInputGroup.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+
+            // دالة إعادة البدء لتهنئة جديدة
+            function startNewCard() {
+                nameInputAr.value = '';
+                nameInputEn.value = '';
+                resultContainer.style.display = 'none';
+                canvas.style.display = 'none';
+                downloadShareContainer.style.display = 'none';
+                nameInputGroup.style.display = 'block';
+                designSelection.style.display = 'none';
+                nextButton.style.display = 'inline-flex';
+                generateButton.style.display = 'none';
+                backButton.style.display = 'none';
+                document.querySelector('.button-container').style.display = 'flex';
+                document.getElementById('stepsIndicator').style.display = 'flex';
+                updateSteps(1);
+                designOptions.forEach(option => option.classList.remove('selected'));
+                selectedDesign = null;
+
+                setTimeout(() => {
+                    nameInputAr.focus();
+                    document.querySelector('.container').scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }, 100);
+            }
+
+            // دالة إنشاء البطاقة
+            async function generateCard() {
+                if (!selectedDesign) {
+                    showError(htmlElement.getAttribute('dir') === 'rtl' ?
+                        'الرجاء اختيار تصميم للتهنئة' :
+                        'Please select a design for the greeting');
+                    return;
+                }
+
+                const nameAr = nameInputAr.value.trim();
+                const nameEn = nameInputEn.value.trim();
+
+                loadingText.style.display = "flex";
+                resultContainer.style.display = "none";
+                canvas.style.display = "none";
+                downloadShareContainer.style.display = "none";
+
+                try {
+                    const fontLoaded = await loadFont();
+
+                    const img = new Image();
+                    img.src = designImages[selectedDesign];
+
+                    await new Promise((resolve, reject) => {
+                        img.onload = resolve;
+                        img.onerror = () => reject(new Error('فشل تحميل الصورة'));
+                    });
+
+                    canvas.width = img.width;
+                    canvas.height = img.height;
+                    ctx.drawImage(img, 0, 0);
+
+                    const fontStyle = fontLoaded ? "'GE SS Two'" : "Arial";
+                    const positions = namePositions[selectedDesign];
+
+                    // كتابة الاسم العربي
+                    if (nameAr) {
+                        const arSize = Math.round(canvas.width * positions.ar.size);
+                        const arY = Math.round(canvas.height * positions.ar.y);
+                        ctx.font = `bold ${arSize}px ${fontStyle}`;
+                        ctx.fillStyle = "#ffffff";
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillText(nameAr, canvas.width / 2, arY);
+                    }
+
+                    // كتابة الاسم الإنجليزي
+                    if (nameEn) {
+                        const enSize = Math.round(canvas.width * positions.en.size);
+                        const enY = Math.round(canvas.height * positions.en.y);
+                        ctx.font = `${enSize}px ${fontStyle}`;
+                        ctx.fillStyle = "#ffffff";
+                        ctx.textAlign = "center";
+                        ctx.textBaseline = "middle";
+                        ctx.fillText(nameEn, canvas.width / 2, enY);
+                    }
+
+                    setupShareLinks(nameAr || nameEn);
+
+                    canvas.style.display = "block";
+                    downloadButton.href = canvas.toDataURL('image/png');
+                    downloadShareContainer.style.display = "flex";
+                    resultContainer.style.display = "block";
+
+                    // إخفاء عناصر الإدخال وإظهار النتيجة فقط
+                    designSelection.style.display = 'none';
+                    document.querySelector('.button-container').style.display = 'none';
+                    document.getElementById('stepsIndicator').style.display = 'none';
+
+                    setTimeout(() => {
+                        resultContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }, 100);
+                } catch (error) {
+                    console.error('حدث خطأ:', error);
+                    showError(htmlElement.getAttribute('dir') === 'rtl' ?
+                        'حدث خطأ أثناء إنشاء التهنئة. الرجاء المحاولة مرة أخرى.' :
+                        'An error occurred while generating the greeting. Please try again.');
+                } finally {
+                    loadingText.style.display = "none";
+                }
+            }
+
+            // دالة لإعداد روابط المشاركة
+            function setupShareLinks(name) {
+                const isArabic = htmlElement.getAttribute('dir') === 'rtl';
+                const shareText = isArabic ?
+                    `تهنئة رمضان من ${name} عبر ويفز! 🌙` :
+                    `Ramadan greetings from ${name} via Waves! 🌙`;
+                const shareUrl = window.location.href;
+
+                twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+                whatsappShare.href = `https://wa.me/?text=${encodeURIComponent(shareText + ' ' + shareUrl)}`;
+                facebookShare.href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`;
+                telegramShare.href = `https://t.me/share/url?url=${encodeURIComponent(shareUrl)}&text=${encodeURIComponent(shareText)}`;
+
+                [twitterShare, whatsappShare, facebookShare, telegramShare].forEach(btn => {
+                    btn.target = '_blank';
+                    btn.rel = 'noopener noreferrer';
+                });
+            }
+
+            // دالة لعرض رسالة الخطأ (Toast)
+            function showError(message) {
+                // إزالة أي toast سابق
+                const existing = document.querySelector('.error-toast');
+                if (existing) existing.remove();
+
+                const toast = document.createElement('div');
+                toast.className = 'error-toast';
+                toast.innerHTML = `<i class="fas fa-exclamation-circle"></i><span>${message}</span>`;
+                document.body.appendChild(toast);
+
+                requestAnimationFrame(() => {
+                    toast.classList.add('show');
+                });
+
+                setTimeout(() => {
+                    toast.classList.remove('show');
+                    setTimeout(() => toast.remove(), 400);
+                }, 3000);
+            }
+
+            // إضافة event listeners
+            nextButton.addEventListener('click', goToDesignSelection);
+            backButton.addEventListener('click', goBackToNameInput);
+            generateButton.addEventListener('click', generateCard);
+            newCardButton.addEventListener('click', startNewCard);
+            languageSwitcher.addEventListener('click', toggleLanguage);
+
+            // اختيار التصميم
+            designOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    designOptions.forEach(opt => opt.classList.remove('selected'));
+                    this.classList.add('selected');
+                    selectedDesign = this.getAttribute('data-design');
+                });
+            });
+
+            // تفعيل الزر عند الضغط على Enter
+            [nameInputAr, nameInputEn].forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        goToDesignSelection();
+                    }
+                });
+            });
+
+            // ضبط اتجاه النص الأولي للحقول
+            nameInputAr.style.textAlign = 'right';
+            nameInputEn.style.textAlign = 'left';
+
+            // تحميل الخط مسبقاً
+            loadFont().catch(e => console.log('تحميل الخط المسبق:', e.message));
+        });
+    </script>
+</body>
+</html>
