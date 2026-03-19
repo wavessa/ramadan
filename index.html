@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تهنئة رمضان | ويفز</title>
+    <title>تهنئة العيد | ويفز</title>
     <link href="logo.gif" rel="icon" sizes="32x32" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary-color: #1b2a4a;
-            --primary-light: #2c4470;
-            --secondary-color: #1b2a4a;
-            --accent-color: #c8102e;
-            --accent-dark: #a00d24;
-            --text-color: #1b2a4a;
+            --primary-color: #1a1040;
+            --primary-light: #2d1b69;
+            --secondary-color: #1a1040;
+            --accent-color: #7c3aed;
+            --accent-dark: #5b21b6;
+            --text-color: #1a1040;
             --light-color: #fff;
             --light-gray: #f8f9fa;
             --shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -58,7 +58,7 @@
         body {
             font-family: 'GE SS Two', Arial, sans-serif;
             text-align: center;
-            background: linear-gradient(135deg, #0d1a2e 0%, #1b2a4a 40%, #2c4470 100%);
+            background: linear-gradient(135deg, #0a0520 0%, #1a1040 40%, #2d1b69 100%);
             color: var(--text-color);
             min-height: 100vh;
             display: flex;
@@ -99,7 +99,7 @@
             100% { opacity: 1; }
         }
 
-        /* هلال رمضان المتوهج */
+        /* هلال العيد المتوهج */
         body::after {
             position: fixed;
             top: 30px;
@@ -107,15 +107,15 @@
             transform: translateX(50%);
             font-size: 3rem;
             color: var(--accent-color);
-            text-shadow: 0 0 20px rgba(200, 16, 46, 0.6), 0 0 40px rgba(200, 16, 46, 0.3);
+            text-shadow: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 40px rgba(124, 58, 237, 0.3);
             animation: glowPulse 3s ease-in-out infinite;
             pointer-events: none;
             z-index: 0;
         }
 
         @keyframes glowPulse {
-            0%, 100% { text-shadow: 0 0 20px rgba(200, 16, 46, 0.6), 0 0 40px rgba(200, 16, 46, 0.3); }
-            50% { text-shadow: 0 0 30px rgba(200, 16, 46, 0.8), 0 0 60px rgba(200, 16, 46, 0.5); }
+            0%, 100% { text-shadow: 0 0 20px rgba(124, 58, 237, 0.6), 0 0 40px rgba(124, 58, 237, 0.3); }
+            50% { text-shadow: 0 0 30px rgba(124, 58, 237, 0.8), 0 0 60px rgba(124, 58, 237, 0.5); }
         }
 
         .container {
@@ -130,7 +130,7 @@
             transform: translateY(0);
             transition: var(--transition);
             z-index: 1;
-            border: 1px solid rgba(200, 16, 46, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.15);
         }
 
         /* زخرفة ذهبية علوية */
@@ -296,7 +296,7 @@
             border-color: var(--accent-color);
             outline: none;
             background-color: var(--light-color);
-            box-shadow: 0 0 0 3px rgba(200, 16, 46, 0.15);
+            box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
         }
 
         input::placeholder {
@@ -343,7 +343,7 @@
 
         .design-option.selected {
             border-color: var(--accent-color);
-            box-shadow: 0 4px 20px rgba(200, 16, 46, 0.3);
+            box-shadow: 0 4px 20px rgba(124, 58, 237, 0.3);
         }
 
         .design-option img {
@@ -416,7 +416,7 @@
             justify-content: center;
             gap: 0.5rem;
             min-width: 180px;
-            box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
         }
 
         button.secondary {
@@ -426,7 +426,7 @@
 
         button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(200, 16, 46, 0.4);
+            box-shadow: 0 6px 18px rgba(124, 58, 237, 0.4);
         }
 
         button.secondary:hover {
@@ -542,7 +542,7 @@
             font-family: 'GE SS Two', Arial, sans-serif;
             transition: var(--transition);
             font-weight: 500;
-            box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+            box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -553,7 +553,7 @@
 
         #newCardButton:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 18px rgba(200, 16, 46, 0.4);
+            box-shadow: 0 6px 18px rgba(124, 58, 237, 0.4);
         }
 
         .share-section {
@@ -730,7 +730,7 @@
             <div class="step-dot" id="step2Dot"></div>
         </div>
 
-        <h2 id="mainHeading"><span class="heading-icon">🏮</span> رمضان كريم <span class="heading-icon">🏮</span></h2>
+        <h2 id="mainHeading">عيد سعيد</h2>
 
         <!-- مرحلة إدخال الاسم -->
         <div class="input-group" id="nameInputGroup">
@@ -745,7 +745,7 @@
             <div class="design-title" id="designTitle">اختر تصميم التهنئة</div>
             <div class="design-options">
                 <div class="design-option selected" data-design="story">
-                    <img src="designs/waves-r.jpeg" alt="تصميم ستوري">
+                    <img src="designs/eid-design.jpeg" alt="تصميم ستوري">
                     <div class="overlay">تصميم ستوري</div>
                 </div>
             </div>
@@ -781,7 +781,7 @@
 
             <div class="download-share-container" id="downloadShareContainer">
                 <div class="action-buttons">
-                    <a download="تهنئة-رمضان-ويفز.jpeg" href="#" id="downloadButton">
+                    <a download="تهنئة-العيد-ويفز.jpeg" href="#" id="downloadButton">
                         <i class="fas fa-download"></i>
                         <span id="downloadButtonText">تحميل التهنئة</span>
                     </a>
@@ -840,7 +840,7 @@
             // متغيرات التطبيق
             let selectedDesign = 'story';
             const designImages = {
-                'story': 'designs/waves-r.jpeg'
+                'story': 'designs/eid-design.jpeg'
             };
             const namePositions = {
                 'story': { ar: { y: 0.58, size: 0.045 }, en: { y: 0.56, size: 0.035 } }
@@ -848,8 +848,8 @@
 
             // نصوص للغة العربية
             const arabicTexts = {
-                heading: "رمضان كريم",
-                headingIcon: "🏮",
+                heading: "عيد سعيد",
+                headingIcon: "�",
                 arabicLabel: "الاسم",
                 arabicPlaceholder: "اكتب اسمك هنا...",
                 designTitle: "اختر تصميم التهنئة",
@@ -867,8 +867,8 @@
 
             // نصوص للغة الإنجليزية
             const englishTexts = {
-                heading: "Ramadan Kareem",
-                headingIcon: "🏮",
+                heading: "Eid Mubarak",
+                headingIcon: "�",
                 arabicLabel: "Name",
                 arabicPlaceholder: "Write your name here...",
                 designTitle: "Choose Greeting Design",
@@ -939,7 +939,7 @@
 
             // دالة لتحديث النصوص حسب اللغة
             function updateTexts(texts) {
-                document.getElementById('mainHeading').innerHTML = `<span class="heading-icon">${texts.headingIcon}</span> ${texts.heading} <span class="heading-icon">${texts.headingIcon}</span>`;
+                document.getElementById('mainHeading').textContent = texts.heading;
                 document.getElementById('arabicNameLabel').textContent = texts.arabicLabel;
                 document.getElementById('nameInputAr').placeholder = texts.arabicPlaceholder;
                 document.getElementById('designTitle').textContent = texts.designTitle;
@@ -1085,8 +1085,8 @@
             function setupShareLinks(name) {
                 const isArabic = htmlElement.getAttribute('dir') === 'rtl';
                 const shareText = isArabic ?
-                    `تهنئة رمضان من ${name} عبر ويفز! 🌙` :
-                    `Ramadan greetings from ${name} via Waves! 🌙`;
+                    `تهنئة العيد من ${name} عبر ويفز! �` :
+                    `Eid greetings from ${name} via Waves! �`;
                 const shareUrl = window.location.href;
 
                 twitterShare.href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
